@@ -5,7 +5,8 @@
 {% for post in object_list %}
    <li><a href="{% url 'article-details' post.pk %}">
       {{post.title}}</a> 
-      - {{post.author}} 
+      - {{post.author}}
+      - {{post.category}} 
       - on {{ post.post_date }} 
       
       {% if user.is_authenticated %}
@@ -15,7 +16,7 @@
          <a href="{% url 'delete_post' post.pk %}">(delete)</a>
       </small><br/>
       {% endif %}
-      {{post.body}}
+      {{post.body|slice:":200"|safe}}
    </li>
 {% endfor %}
 </ul>

@@ -6,7 +6,7 @@
     <a href="{% url 'update_post' post.pk %}">(Edit)</a> . 
         <a href="{% url 'delete_post' post.pk %}">(delete)</a></small><br/>
 <hr>
-{{post.body}}
+{{post.body|safe}}
 
 <br/><br/>
 <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
