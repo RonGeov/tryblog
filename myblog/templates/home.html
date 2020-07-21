@@ -6,7 +6,7 @@
    <li><a href="{% url 'article-details' post.pk %}">
       {{post.title}}</a> 
       - {{post.author}}
-      - <a href="{% url 'category' post.category%}">{{post.category}}</a> 
+      - <a href="{% url 'category' post.category|slugify %}">{{post.category}}</a> 
       - on {{ post.post_date }} 
       
       {% if user.is_authenticated %}
