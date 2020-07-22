@@ -2,6 +2,7 @@
 {% block title %}Edit Blog Post!{% endblock %}
 {% block content %}
 {% if user.is_authenticated %}
+{% if user.id == post.author.id %}
 <h1>Dlete Post...</h1>
 <br/><br/>
 <h3>Delete : {{post.title}}</h3>
@@ -15,7 +16,9 @@
 </form>
 </div>
 
-
+{% else %}
+<h2>OOPS!! you cannot dlete this post</h2>
+{% endif %}
 {% else %}
 Login to delete the post
 {% endif %}

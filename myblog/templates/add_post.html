@@ -11,6 +11,10 @@
     <button class="btn btn-secondary">Post</button>
 </form>
 </div>
+<script>
+    var name = "{{ user.id }}";
+    document.getElementById("authorField").value = name;
+</script>
 {% else %}
 Login to add the post
 {% endif %}
